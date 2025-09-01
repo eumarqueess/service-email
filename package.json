@@ -1,0 +1,26 @@
+{
+  "name": "service-email",
+  "version": "1.0.0",
+  "description": "Service Email",
+  "scripts": {
+    "start:dev": "nodemon src/main.ts"
+  },
+  "author": "Marcos Marques",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/nodemailer": "^7.0.1",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "@nestjs/schedule": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "module-queue": "github:eumarqueess/module-queue#build",
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  }
+}
