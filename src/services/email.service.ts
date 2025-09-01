@@ -30,7 +30,7 @@ export class EmailService {
       await transport.sendMail(mailOptions);
       console.log('[nodemailer] Email sent');
     } catch (error: any) {
-      throw new Error('[nodemailer] Error sending email:', error.message);
+      console.error('[nodemailer] Error sending email:', error.message);
     }
   }
 }
