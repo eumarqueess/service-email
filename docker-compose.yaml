@@ -8,6 +8,7 @@ services:
       dockerfile: dockerfile.prd
     networks:
       - local-net
+    restart: always
 networks:
   local-net:
     driver: bridge
