@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { SetupService } from './services/setup.service';
 
 require('dotenv').config({
-  path: ".env." + (process.env.ENVIROMENT || "dev")
+  path: ".env." + (process.env.ENVIRONMENT || "dev")
 })
 
 const queueService = new QueueService()
@@ -15,7 +15,7 @@ async function bootstrap() {
   await queueService.start();
   await setupService.run(queueService);
 
-  console.log('ENVIROMENT: ' + process.env.ENVIROMENT);
+  console.log('ENVIRONMENT: ' + process.env.ENVIRONMENT);
   const app = await NestFactory.create(AppModule);
   await app.listen(process.env.PORT || 3000);
 
@@ -24,6 +24,5 @@ async function bootstrap() {
   console.log('---------------------');
 }
 bootstrap();
-
 
 export { queueService }
