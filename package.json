@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Service Email",
   "scripts": {
-    "start:dev": "nodemon src/main.ts"
+    "start:dev": "nodemon src/main.ts",
+    "build": "rm -rf dist/ && tsc"
   },
   "author": "Marcos Marques",
   "license": "MIT",
