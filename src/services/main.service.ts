@@ -11,11 +11,12 @@ export class MainService {
   @Cron('*/10 * * * * *')
   async run() {
     const queue = process.env.RMQ_QUEUE_EMAIL as string;
+    const route = process.env.RMQ_ROUTE_EMAIL as string;
 
     try {
       console.log(`[nodemailer] Consuming queue ${queue}...`);
 
-      await queueService.consumeQueue(queue, async message => {
+      await queueService.consumeQueue(queue, route, async message => {
         try {
           const content = JSON.parse(message.content.toString()) as EmailType;
           await this.emailService.send(content);
