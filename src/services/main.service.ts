@@ -10,7 +10,7 @@ export class MainService {
 
   @Cron('*/10 * * * * *')
   async run() {
-    const queue = process.env.RM_QUEUE_EMAIL || 'q-email';
+    const queue = process.env.RMQ_QUEUE_EMAIL || 'q-email';
 
     try {
       console.log(`[nodemailer] Consuming queue ${queue}...`);
