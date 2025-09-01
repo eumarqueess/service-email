@@ -9,7 +9,7 @@ export class SetupService {
   async run(queueService: QueueService) {
     const exchange = 'exc.delay';
     const queue = process.env.RMQ_QUEUE_EMAIL || 'q-email';
-    const route = process.env.RMQ_QUEUE_ROUTE || 'r-email';
+    const route = process.env.RMQ_ROUTE_EMAIL || 'r-email';
 
     console.log('[nodemailer] Configuring queue service...');
 
